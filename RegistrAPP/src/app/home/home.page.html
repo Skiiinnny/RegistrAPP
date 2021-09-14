@@ -1,18 +1,27 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      RegistrAPP
-    </ion-title>
+    <ion-title> RegistrAPP </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-input placeholder="NombreUsuario"></ion-input>
-    
-    <ion-input placeholder="Contraseña"></ion-input>
-    <ion-button>
-      Entrar
-    </ion-button>
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-avatar>
+        <img src="../../assets/LogoApp.png" alt="Logo de la aplicación" />
+      </ion-avatar>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-item>
+        <ion-label>Nombre Usuario</ion-label>
+        <ion-input autofocus></ion-input>
+      </ion-card-item>
+      <ion-card-item>
+        <ion-label>Contraseña</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-card-item>
+    </ion-card-content>
+    <ion-button class="BotonIngreso" > <p>Entrar</p>  </ion-button>
+    <p class="EnlaceRegistro">Necesitas una cuenta? <a href="#">Registrate</a></p>
   </ion-card>
 </ion-content>

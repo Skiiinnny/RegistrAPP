@@ -1,0 +1,32 @@
+:root{
+  --Color1: #f4d139;
+}
+ion-content {
+  --ion-background-color: #1b3964;
+
+}
+ion-content ion-card ion-input {
+  border: 1px solid #f4d139;
+  border-radius: 15px;
+}
+ion-content ion-card ion-label {
+  color: #f4d139;
+}
+.EnlaceRegistro {
+  font-weight: 300;
+}
+.EnlaceRegistro a {
+  text-decoration: none;
+}
+
+
+.BotonIngreso p{
+  color: #f4d139;
+  font-weight: 400;
+}
+ion-card {
+  text-align: center
+}
+ion-avatar{
+  margin-left: 75px; 
+}

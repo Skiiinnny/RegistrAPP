@@ -9,6 +9,7 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 
+
 export class HomePage implements OnInit {
 
   user = {nombre: "", clave: ""}
@@ -36,5 +37,6 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit(){
+
   }
 }

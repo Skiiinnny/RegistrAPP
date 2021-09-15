@@ -9,45 +9,51 @@
 
   <ion-card color="light">
     <!-- HEADER CON LOGO DE LA APP  -->
- 
-          <ion-card-header>
-            <ion-avatar  class="avatar">
-              <img src="../../assets/LogoApp.png" alt="Logo de la aplicación" />
-            </ion-avatar>
-          </ion-card-header>
-   
-      <!-- FIN HEADER  -->
 
-      <!-- CONTENIDO CARD  -->
+    <ion-card-header>
+      <ion-avatar class="avatar">
+        <img src="../../assets/LogoApp.png" alt="Logo de la aplicación" />
+      </ion-avatar>
+    </ion-card-header>
 
-      <ion-card-content>
-        <!-- ITEM USUARIO  -->
+    <!-- FIN HEADER  -->
 
-        <ion-label>Nombre Usuario</ion-label>
+
+    <!-- CONTENIDO CARD  -->
+
+    <ion-card-content>
+      
+      <!-- ITEM USUARIO  -->
+      
+      <ion-label>Nombre Usuario</ion-label>
         <ion-input autofocus [(ngModel)]="user.nombre"></ion-input>
 
-        <!-- FIN ITEM USUARIO  -->
+      <!-- FIN ITEM USUARIO  -->
 
-        <!-- ITEM CONTRASEÑA  -->
+      <!-- ITEM CONTRASEÑA  -->
 
-        <ion-label>Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="user.clave"></ion-input>
+      <ion-label>Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="user.clave"></ion-input>
 
-        <!-- FIN ITEM CONTRASEÑA  -->
-      </ion-card-content>
+      <!-- FIN ITEM CONTRASEÑA  -->
+    </ion-card-content>
 
-      <!-- FIN CONTENIDO CARD  -->
 
-      <!-- BOTON ENTRAR  -->
+    <!-- FIN CONTENIDO CARD  -->
 
       <ion-button class="BotonIngreso" (click)="login()"> <p>Entrar</p> </ion-button>
 
-      <!-- ENLACE REGISTRO  -->
+
+    <!-- BOTON ENTRAR  -->
+
+
+
 
       <p class="EnlaceRegistro">
         ¿Olvidaste tu contraseña? <a href="#">¡Recupérala!</a>
       </p>
     
+
   </ion-card>
 
   <!-- FIN CARD INICIO SESIÓN  -->

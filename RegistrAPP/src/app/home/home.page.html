@@ -24,7 +24,7 @@
         <!-- ITEM USUARIO  -->
 
         <ion-label>Nombre Usuario</ion-label>
-        <ion-input autofocus></ion-input>
+        <ion-input autofocus [(ngModel)]="user.nombre"></ion-input>
 
         <!-- FIN ITEM USUARIO  -->
 
@@ -40,12 +40,12 @@
 
       <!-- BOTON ENTRAR  -->
 
-      <ion-button class="BotonIngreso"> <p>Entrar</p> </ion-button>
+      <ion-button class="BotonIngreso" (click)="login()"> <p>Entrar</p> </ion-button>
 
       <!-- ENLACE REGISTRO  -->
 
       <p class="EnlaceRegistro">
-        Olvidaste tu contraseña? <a href="#">Recuperala</a>
+        ¿Olvidaste tu contraseña? <a href="#">¡Recupérala!</a>
       </p>
     
   </ion-card>

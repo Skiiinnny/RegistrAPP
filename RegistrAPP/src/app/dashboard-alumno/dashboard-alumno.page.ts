@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-alumno',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardAlumnoPage implements OnInit {
 
-  constructor() { }
+  data: any;
+
+  constructor(private activeroute: ActivatedRoute, private router: Router) {
+    this.activeroute.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.data = this.router.getCurrentNavigation().extras.state.user;
+        console.log(this.data)
+      }
+    });
+
+  }
 
   ngOnInit() {
   }

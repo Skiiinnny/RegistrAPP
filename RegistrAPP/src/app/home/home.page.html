@@ -21,19 +21,18 @@
     <!-- CONTENIDO CARD  -->
 
     <ion-card-content>
-      
       <!-- ITEM USUARIO  -->
-      
-      <ion-label>Nombre Usuario</ion-label>
-        <ion-input autofocus [(ngModel)]="user.nombre"></ion-input>
-
+      <ion-item>
+        <ion-label position="floating">Nombre Usuario</ion-label>
+        <ion-input  [(ngModel)]="user.nombre"></ion-input>
+      </ion-item>
       <!-- FIN ITEM USUARIO  -->
 
       <!-- ITEM CONTRASEÑA  -->
-
-      <ion-label>Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="user.clave"></ion-input>
-
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="user.clave"></ion-input>
+      </ion-item>
       <!-- FIN ITEM CONTRASEÑA  -->
     </ion-card-content>
 

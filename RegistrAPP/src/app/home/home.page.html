@@ -33,6 +33,10 @@
         <ion-label position="floating">Contraseña</ion-label>
         <ion-input type="password" [(ngModel)]="user.clave"></ion-input>
       </ion-item>
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Profesor</mat-radio-button>
+        <mat-radio-button value="2">Alumno</mat-radio-button>
+      </mat-radio-group>
       <!-- FIN ITEM CONTRASEÑA  -->
     </ion-card-content>
 

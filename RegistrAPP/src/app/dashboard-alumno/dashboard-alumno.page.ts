@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-dashboard-alumno',
   templateUrl: './dashboard-alumno.page.html',
   styleUrls: ['./dashboard-alumno.page.scss'],
+  
 })
 export class DashboardAlumnoPage implements OnInit {
 

@@ -13,7 +13,8 @@ import { DashboardAlumnoPage } from './dashboard-alumno.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    DashboardAlumnoPageRoutingModule
+    DashboardAlumnoPageRoutingModule,
+    
   ],
   declarations: [DashboardAlumnoPage]
 })

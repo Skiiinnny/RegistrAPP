@@ -1,31 +1,32 @@
-ion-content { //Color de fondo
-  --ion-background-color: #1b3964; 
+ion-content {
+  //Color de fondo
+  --ion-background-color: #1b3964;
 }
-ion-content ion-card ion-input { //Bordes de los input
-  border: 1px solid #f4d139;  
+ion-content ion-card ion-input {
+  //Bordes de los input
+  border: 1px solid #f4d139;
   border-radius: 15px;
 }
-ion-content ion-card ion-label { //Color de la Label
+ion-content ion-card ion-label {
+  //Color de la Label
   color: #f4d139;
 }
-.EnlaceRegistro { 
+.EnlaceRegistro {
   font-weight: 300;
   color: #f4d139;
-
 }
 .EnlaceRegistro a {
   text-decoration: none;
   color: #fff;
   text-shadow: black;
-
 }
 
 .BotonIngreso p {
   color: #f4d139;
   font-weight: 400;
 }
-ion-card { 
-  text-align: center;//Centrar contendido de la card
+ion-card {
+  text-align: center; //Centrar contendido de la card
   //Fondo de vidrio(?
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -34,18 +35,16 @@ ion-card {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  place-items: center;
+  // place-items: center;
   padding: 24px 16px;
 }
 // ion-avatar {
 
 // }
-.avatar{
+.avatar {
   height: 80px;
   width: 80px;
   object-fit: cover;
-  position: absolute;
-  left:48px;
-  top:-32px;
-  
+  display: block;
+  margin: auto;
 }

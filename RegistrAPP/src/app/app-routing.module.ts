@@ -15,12 +15,12 @@ const routes: Routes = [
   },
  
   {
-    path: 'dashboard-alumno.page',
+    path: 'dashboard-alumno',
     component : DashboardAlumnoPage,
     loadChildren: () => import('./dashboard-alumno/dashboard-alumno.module').then( m => m.DashboardAlumnoPageModule)
   },
   {
-    path: 'dashboard-profesor.page',
+    path: 'dashboard-profesor',
     loadChildren: () => import('./dashboard-profesor/dashboard-profesor.module').then( m => m.DashboardProfesorPageModule)
   },
   {
@@ -30,7 +30,8 @@ const routes: Routes = [
   {
     path: 'scan-qr',
     loadChildren: () => import('./scan-qr/scan-qr.module').then( m => m.ScanQrPageModule)
-  },  {
+  },
+  {
     path: 'test',
     loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
   },

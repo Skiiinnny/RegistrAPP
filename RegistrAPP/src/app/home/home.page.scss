@@ -4,14 +4,15 @@ ion-content {
 }
 ion-content ion-card ion-input {
   //Bordes de los input
-  border: 1px solid #f4d139;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 ion-content ion-card ion-label {
   //Color de la Label
   color: #f4d139;
+  text-align: start;
 }
 .EnlaceRegistro {
+  text-align: center;
   font-weight: 300;
   color: #f4d139;
 }
@@ -25,18 +26,23 @@ ion-content ion-card ion-label {
   color: #f4d139;
   font-weight: 400;
 }
+.BotonIngreso {
+  display: block;
+  margin-left:25px;
+  margin-right:25px;
+}
 ion-card {
-  text-align: center; //Centrar contendido de la card
+  // text-align: center; //Centrar contendido de la card
   //Fondo de vidrio(?
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   // place-items: center;
-  padding: 24px 16px;
+  // padding: 24px 16px;
 }
 // ion-avatar {
 
@@ -47,4 +53,10 @@ ion-card {
   object-fit: cover;
   display: block;
   margin: auto;
+}
+
+ion-item {
+  --background: rgba(255, 255, 255, 0);
+  text-align: center;
+  --border-color: #f4d139;
 }

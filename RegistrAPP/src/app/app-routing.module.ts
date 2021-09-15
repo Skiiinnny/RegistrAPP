@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
+    path: 'home',
     redirectTo: 'home',
     pathMatch: 'full'
   },
@@ -19,6 +19,26 @@ const routes: Routes = [
     path: 'inicio-alumno',
     loadChildren: () => import('./inicio-alumno/inicio-alumno.module').then( m => m.InicioAlumnoPageModule)
   },
+  {
+    path: '',
+    loadChildren: () => import('./dashboard-alumno/dashboard-alumno.module').then( m => m.DashboardAlumnoPageModule)
+  },
+  {
+    path: 'dashboard-profesor',
+    loadChildren: () => import('./dashboard-profesor/dashboard-profesor.module').then( m => m.DashboardProfesorPageModule)
+  },
+  {
+    path: 'activate-qr',
+    loadChildren: () => import('./activate-qr/activate-qr.module').then( m => m.ActivateQrPageModule)
+  },
+  {
+    path: 'scan-qr',
+    loadChildren: () => import('./scan-qr/scan-qr.module').then( m => m.ScanQrPageModule)
+  },
+
+
+
+
 ];
 
 @NgModule({

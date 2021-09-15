@@ -6,22 +6,18 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-
-
 export class HomePage implements OnInit {
-
-  user = {nombre: "", clave: ""}
+  user = { nombre: '', clave: '' };
 
   constructor(private router: Router) {}
 
-  login(){
+  login() {
     let navigationExtras: NavigationExtras = {
-      state: {user: this.user}
-      };
-      this.router.navigate(['/dashboard-alumno'],navigationExtras);      
+      state: { user: this.user },
+    };
+    this.router.navigate(['/dashboard-alumno'], navigationExtras);
+    this.user = { nombre: '', clave: '' };
   }
 
-  ngOnInit(){
-
-  }
+  ngOnInit() {}
 }

@@ -9,45 +9,44 @@
 
   <ion-card color="light">
     <!-- HEADER CON LOGO DE LA APP  -->
- 
-          <ion-card-header>
-            <ion-avatar  class="avatar">
-              <img src="../../assets/LogoApp.png" alt="Logo de la aplicación" />
-            </ion-avatar>
-          </ion-card-header>
-   
-      <!-- FIN HEADER  -->
 
-      <!-- CONTENIDO CARD  -->
+    <ion-card-header>
+      <ion-avatar class="avatar">
+        <img src="../../assets/LogoApp.png" alt="Logo de la aplicación" />
+      </ion-avatar>
+    </ion-card-header>
 
-      <ion-card-content>
-        <!-- ITEM USUARIO  -->
+    <!-- FIN HEADER  -->
 
-        <ion-label>Nombre Usuario</ion-label>
-        <ion-input autofocus></ion-input>
+    <!-- CONTENIDO CARD  -->
 
-        <!-- FIN ITEM USUARIO  -->
+    <ion-card-content>
+      <!-- ITEM USUARIO  -->
 
-        <!-- ITEM CONTRASEÑA  -->
+      <ion-label>Nombre Usuario</ion-label>
+      <ion-input autofocus></ion-input>
 
-        <ion-label>Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
+      <!-- FIN ITEM USUARIO  -->
 
-        <!-- FIN ITEM CONTRASEÑA  -->
-      </ion-card-content>
+      <!-- ITEM CONTRASEÑA  -->
 
-      <!-- FIN CONTENIDO CARD  -->
+      <ion-label>Contraseña</ion-label>
+      <ion-input type="password"></ion-input>
 
-      <!-- BOTON ENTRAR  -->
+      <!-- FIN ITEM CONTRASEÑA  -->
+    </ion-card-content>
 
-      <ion-button class="BotonIngreso"> <p>Entrar</p> </ion-button>
+    <!-- FIN CONTENIDO CARD  -->
 
-      <!-- ENLACE REGISTRO  -->
+    <!-- BOTON ENTRAR  -->
 
-      <p class="EnlaceRegistro">
-        Olvidaste tu contraseña? <a href="#">Recuperala</a>
-      </p>
-    
+    <ion-button class="BotonIngreso" [routerLink]="dashboard-alumno"> <p>Entrar</p> </ion-button>
+
+    <!-- ENLACE REGISTRO  -->
+
+    <p class="EnlaceRegistro">
+      Olvidaste tu contraseña? <a href="#">Recuperala</a>
+    </p>
   </ion-card>
 
   <!-- FIN CARD INICIO SESIÓN  -->

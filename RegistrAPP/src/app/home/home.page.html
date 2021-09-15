@@ -18,7 +18,11 @@
 
     <!-- FIN HEADER  -->
 
+
     <!-- CONTENIDO CARD  -->
+
+        <ion-label>Nombre Usuario</ion-label>
+        <ion-input autofocus [(ngModel)]="user.nombre"></ion-input>
 
     <ion-card-content>
       <!-- ITEM USUARIO  -->
@@ -36,17 +40,22 @@
       <!-- FIN ITEM CONTRASEÑA  -->
     </ion-card-content>
 
+
     <!-- FIN CONTENIDO CARD  -->
+
+      <ion-button class="BotonIngreso" (click)="login()"> <p>Entrar</p> </ion-button>
+
 
     <!-- BOTON ENTRAR  -->
 
-    <ion-button class="BotonIngreso" [routerLink]="dashboard-alumno"> <p>Entrar</p> </ion-button>
 
-    <!-- ENLACE REGISTRO  -->
 
-    <p class="EnlaceRegistro">
-      Olvidaste tu contraseña? <a href="#">Recuperala</a>
-    </p>
+
+      <p class="EnlaceRegistro">
+        ¿Olvidaste tu contraseña? <a href="#">¡Recupérala!</a>
+      </p>
+    
+
   </ion-card>
 
   <!-- FIN CARD INICIO SESIÓN  -->

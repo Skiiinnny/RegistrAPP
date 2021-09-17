@@ -8,7 +8,7 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  user = { nombre: '', clave: '' };
+  user = { nombre: '', clave: '', tipo: '' };
 
   constructor(
     private router: Router,
@@ -16,18 +16,17 @@ export class HomePage implements OnInit {
   ) {}
 
   async login() {
-    let radioButton1 = document.getElementById('#RadioButto1');
-    let radioButton2 = document.getElementById('#RadioButto2');
-    if (this.user.nombre != '' && this.user.clave != '') {
-      
-        let navigationExtras: NavigationExtras = {
-          state: { user: this.user },
-        };
-
+    if (this.user.nombre != '' && this.user.clave != '' && this.user.tipo != '') {
+      let navigationExtras: NavigationExtras = {
+        state: { user: this.user },
+      };
+      if (this.user.tipo == '2') {
         this.router.navigate(['/dashboard-alumno'], navigationExtras);
+      }else{
+        this.router.navigate(['/dashboard-profesor'], navigationExtras);
+      }
 
-        this.user = { nombre: '', clave: '' };
-     
+      this.user = { nombre: '', clave: '', tipo: '' };
     } else {
       const toast = await this.toastController.create({
         message: '¡Llene todos los campos!',

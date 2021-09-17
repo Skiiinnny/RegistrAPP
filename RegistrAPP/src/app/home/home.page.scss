@@ -1,3 +1,5 @@
+
+
 ion-content {
   //Color de fondo
   --ion-background-color: #1b3964;
@@ -55,8 +57,16 @@ ion-card {
   margin: auto;
 }
 
-ion-item {
+ion-item  {
   --background: rgba(255, 255, 255, 0);
   text-align: center;
   --border-color: #f4d139;
+}
+.tipoUsuario{
+  text-align:start;
+}
+.radioButton{
+  font-size: 16px;
+  color: #f4d139;
+  
 }

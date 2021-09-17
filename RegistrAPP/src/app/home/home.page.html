@@ -22,21 +22,23 @@
 
     <ion-card-content>
       <!-- ITEM USUARIO  -->
-      <ion-item>
+      <ion-item class="usuario">
         <ion-label position="floating">Nombre Usuario</ion-label>
-        <ion-input  [(ngModel)]="user.nombre"></ion-input>
+        <ion-input [(ngModel)]="user.nombre"></ion-input>
       </ion-item>
       <!-- FIN ITEM USUARIO  -->
 
       <!-- ITEM CONTRASEÑA  -->
-      <ion-item>
+      <ion-item id="pass">
         <ion-label position="floating">Contraseña</ion-label>
         <ion-input type="password" [(ngModel)]="user.clave"></ion-input>
       </ion-item>
-      <mat-radio-group aria-label="Select an option">
-        <mat-radio-button value="1">Profesor</mat-radio-button>
-        <mat-radio-button value="2">Alumno</mat-radio-button>
-      </mat-radio-group>
+      <ion-item class="tipoUsuario">
+        <mat-radio-group  aria-label="Select an option">
+          <mat-radio-button id="RadioButton1" class="radioButton" value="1">Profesor</mat-radio-button>
+          <mat-radio-button id="RadioButton2" class="radioButton" value="2">Alumno</mat-radio-button>
+        </mat-radio-group>
+      </ion-item>
       <!-- FIN ITEM CONTRASEÑA  -->
     </ion-card-content>
 

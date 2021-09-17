@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-toolbar class="header-color">
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back-outline"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <img class="logo" src="../../assets/RegistrAPP.png" alt="">
+  </div>
+
+  <div>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Recuperar contraseña</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <mat-form-field appearance="legacy">
+            <mat-label>Nombre de Usuario</mat-label>
+            <input matInput [(ngModel)]="username">
+          </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="envio()">RECUPERAR</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</ion-content>

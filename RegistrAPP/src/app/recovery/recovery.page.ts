@@ -26,7 +26,7 @@ export class RecoveryPage implements OnInit {
     }else {
       const toast = await this.toastController.create({
         message: '¡Llene todos los campos!',
-        duration: 1000,
+        duration: 2000,
         color: 'warning',
       });
       toast.present();

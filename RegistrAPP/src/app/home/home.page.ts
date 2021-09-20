@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { AnimationController, ToastController, Animation } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +8,14 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  user = { nombre: '', clave: '', tipo: '' };
-
+  user = { nombre: '', clave: '', tipo: '' }
+  
   constructor(
     private router: Router,
-    private toastController: ToastController
+    private toastController: ToastController, 
+    private animationCTRL: AnimationController
   ) {}
+
 
   async login() {
     if (
@@ -38,13 +40,12 @@ export class HomePage implements OnInit {
       });
       toast.present();
     }
+
+ 
   }
   cleanFields() {
     this.user = { nombre: '', clave: '', tipo: '' };
   }
-  inputAnimation (){
-    let inputNombre = document.getElementsByClassName('.usuario')
-    console.log(inputNombre)
-  }
+
   ngOnInit() {}
 }

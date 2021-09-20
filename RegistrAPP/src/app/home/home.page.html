@@ -22,9 +22,9 @@
 
     <ion-card-content>
       <!-- ITEM USUARIO  -->
-      <ion-item class="usuario">
+      <ion-item (click)="inputAnimation()" class="usuario">
         <ion-label position="floating">Nombre Usuario</ion-label>
-        <ion-input [(ngModel)]="user.nombre"></ion-input>
+        <ion-input [(ngModel)]="user.nombre"  class="usuario" name="inputNombre"  ></ion-input>
       </ion-item>
       <!-- FIN ITEM USUARIO  -->
 
@@ -35,24 +35,25 @@
       </ion-item>
       <ion-item class="tipoUsuario">
         <mat-radio-group [(ngModel)]="user.tipo" aria-label="Select an option">
-          <mat-radio-button class="radioButton" value="1">Profesor</mat-radio-button>
-          <mat-radio-button class="radioButton" value="2">Alumno</mat-radio-button>
+          <mat-radio-button class="radioButton" value="1"
+            >Profesor</mat-radio-button
+          >
+          <mat-radio-button class="radioButton" value="2"
+            >Alumno</mat-radio-button
+          >
         </mat-radio-group>
       </ion-item>
       <!-- FIN ITEM CONTRASEÑA  -->
     </ion-card-content>
 
     <!-- FIN CONTENIDO CARD  -->
-
+    <!-- BOTON ENTRAR  -->
     <ion-button class="BotonIngreso" (click)="login()">
       <p>Entrar</p>
     </ion-button>
-
-    <!-- BOTON ENTRAR  -->
-    <ion-item [routerLink]="['/recovery']">
-      <p class="EnlaceRegistro">
-        ¿Olvidaste tu contraseña? ¡Recupérala!
-      </p>
+    <!-- RECUPERAR CONTRASEÑA -->
+    <ion-item [routerLink]="['/recovery']" (click)="cleanFields()">
+      <p class="EnlaceRegistro">¿Olvidaste tu contraseña? ¡Recupérala!</p>
     </ion-item>
   </ion-card>
 

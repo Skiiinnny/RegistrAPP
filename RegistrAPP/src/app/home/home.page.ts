@@ -16,16 +16,19 @@ export class HomePage implements OnInit {
   ) {}
 
   async login() {
-    if (this.user.nombre != '' && this.user.clave != '' && this.user.tipo != '') {
+    if (
+      this.user.nombre != '' &&
+      this.user.clave != '' &&
+      this.user.tipo != ''
+    ) {
       let navigationExtras: NavigationExtras = {
         state: { user: this.user },
       };
       if (this.user.tipo == '2') {
         this.router.navigate(['/dashboard-alumno'], navigationExtras);
-      }else{
+      } else {
         this.router.navigate(['/dashboard-profesor'], navigationExtras);
       }
-
       this.user = { nombre: '', clave: '', tipo: '' };
     } else {
       const toast = await this.toastController.create({
@@ -36,6 +39,12 @@ export class HomePage implements OnInit {
       toast.present();
     }
   }
-
+  cleanFields() {
+    this.user = { nombre: '', clave: '', tipo: '' };
+  }
+  inputAnimation (){
+    let inputNombre = document.getElementsByClassName('.usuario')
+    console.log(inputNombre)
+  }
   ngOnInit() {}
 }

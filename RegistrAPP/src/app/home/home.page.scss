@@ -27,10 +27,14 @@ ion-content ion-card ion-label {
   font-weight: 600;
 }
 .BotonIngreso {
+
   display: block;
   margin-left: 25px;
   margin-right: 25px;
+  --background: #1b3964;
+
 }
+
 ion-card {
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -56,24 +60,25 @@ ion-item {
   text-align: start;
 }
 
-.radioButton{
+.radioButton {
   font-size: 14px;
   color: #f4d139;
 }
 
 .mat-radio-button ~ .mat-radio-button {
-  margin-left: 16px;
+  margin-left: 15px;
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
-	opacity: 0 !important;     /*click effect color change*/
-	background-color: blue !important;
+  opacity: 0 !important; /*click effect color change*/
+  background-color: blue !important;
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
-	background-color: #f4d139!important;   /*inner circle color change*/
+  background-color: #f4d139 !important; /*inner circle color change*/
 }
 
-::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-	border-color: #f4d139 !important; /*outer ring color change*/
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
+  .mat-radio-outer-circle {
+  border-color: #f4d139 !important; /*outer ring color change*/
 }

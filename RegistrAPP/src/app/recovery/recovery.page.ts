@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { AnimationController, ToastController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-recovery',
@@ -8,8 +9,9 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./recovery.page.scss'],
 })
 export class RecoveryPage implements OnInit {
-  
-  constructor(private toastController: ToastController, private router: Router) { }
+
+  constructor(private toastController: ToastController, 
+    private router: Router, private animationCtrl: AnimationController) { }
 
   username = '';
 
@@ -32,7 +34,6 @@ export class RecoveryPage implements OnInit {
       toast.present();
     }
   }
-
 
   ngOnInit() {
   }

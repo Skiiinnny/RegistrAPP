@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { AnimationController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,8 @@ export class HomePage implements OnInit {
 
   constructor(
     private router: Router,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private animationCtrl: AnimationController
   ) {}
 
   async login() {
@@ -31,6 +32,16 @@ export class HomePage implements OnInit {
       }
       this.user = { nombre: '', clave: '', tipo: '' };
     } else {
+      this.animationCtrl.create()
+        .addElement(document.querySelector('#content'))
+        .duration(300)
+        .keyframes([
+          { offset: 0.25, 'transform': 'translate(10px)' },
+          { offset: 0.75, 'transform': 'translate(-10px)' },
+          { offset: 1, 'transform': 'translate(0px)' },
+        ])
+        .iterations(2)
+        .play()
       const toast = await this.toastController.create({
         message: '¡Llene todos los campos!',
         duration: 1000,

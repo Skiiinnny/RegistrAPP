@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-toolbar class="header-color">
     <ion-buttons slot="start">
@@ -12,8 +11,14 @@
     <img class="logo" src="../../assets/RegistrAPP.png" alt="">
   </div>
 
-  <div>
-    <img class="sample" src="../../assets/SAMPLE.jpg" alt="">
-  </div>
+  <mat-spinner class="spinner"></mat-spinner>
+  <h4 class="loading" id="texto">Cargando cámara...</h4>
 
+  <div>
+    <ion-button color="warning" expand="block" (click)="animar()">
+      <h4 class="salir">
+        E S C A N E A R
+      </h4>
+    </ion-button>
+  </div>
 </ion-content>

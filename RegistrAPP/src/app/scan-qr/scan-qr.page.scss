@@ -22,3 +22,27 @@ ion-title{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: larger;
 }
+
+:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {   
+    stroke: #f4d139;
+}
+
+.spinner{
+    display:block;
+    margin:auto;
+    margin-top: 20px;
+}
+
+.loading{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f4d139;
+    text-align-last: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.salir {
+    color: white;
+    box-shadow: black;
+    font-weight: 600;
+  }

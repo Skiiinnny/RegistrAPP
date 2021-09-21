@@ -8,13 +8,14 @@ import { AnimationController, ToastController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  user = { nombre: '', clave: '', tipo: '' };
-
+  user = { nombre: '', clave: '', tipo: '' }
+  
   constructor(
     private router: Router,
     private toastController: ToastController,
     private animationCtrl: AnimationController
   ) {}
+
 
   async login() {
     if (
@@ -49,13 +50,12 @@ export class HomePage implements OnInit {
       });
       toast.present();
     }
+
+ 
   }
   cleanFields() {
     this.user = { nombre: '', clave: '', tipo: '' };
   }
-  inputAnimation (){
-    let inputNombre = document.getElementsByClassName('.usuario')
-    console.log(inputNombre)
-  }
+
   ngOnInit() {}
 }

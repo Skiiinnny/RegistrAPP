@@ -33,7 +33,7 @@ export class HomePage implements OnInit {
       };
       
 
-      if (this.storage.get('tipoUsuario') == '2') {
+      if (await this.storage.get('tipoUsuario') == '2') {
         this.router.navigate(['/dashboard-alumno'], navigationExtras);
       } else {
         this.router.navigate(['/dashboard-profesor'], navigationExtras);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AnimationController, ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
@@ -13,11 +14,15 @@ export class HomePage implements OnInit {
   constructor(
     private router: Router,
     private toastController: ToastController,
-    private animationCtrl: AnimationController
-  ) {}
+    private animationCtrl: AnimationController,
+    private storage: Storage
+  ) {
+    storage.set('tipoUsuario','2')
+  }
 
 
   async login() {
+    this.storage.get('tipoUsuario')
     if (
       this.user.nombre != '' &&
       this.user.clave != '' &&
@@ -26,7 +31,9 @@ export class HomePage implements OnInit {
       let navigationExtras: NavigationExtras = {
         state: { user: this.user },
       };
-      if (this.user.tipo == '2') {
+      
+
+      if (this.storage.get('tipoUsuario') == '2') {
         this.router.navigate(['/dashboard-alumno'], navigationExtras);
       } else {
         this.router.navigate(['/dashboard-profesor'], navigationExtras);

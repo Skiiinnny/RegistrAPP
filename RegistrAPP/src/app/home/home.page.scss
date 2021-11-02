@@ -1,6 +1,6 @@
 ion-content {
   //Color de fondo
-  --ion-background-color: #1b3964;
+  --ion-background-color: #1b3964de;
 }
 ion-content ion-card ion-input {
   //Bordes de los input
@@ -8,39 +8,42 @@ ion-content ion-card ion-input {
 }
 ion-content ion-card ion-label {
   //Color de la Label
-  color: #f4d139;
+  color: #f4d239e0;
   text-align: start;
+  text-shadow: 1px 1px 1px black;
 }
-.EnlaceRegistro {
-  text-align: center;
-  font-weight: 300;
-  color: #f4d139;
-}
-.EnlaceRegistro a {
-  text-decoration: none;
-  color: #fff;
-  text-shadow: black;
-}
-
-.BotonIngreso p {
-  color: #f4d139;
-  font-weight: 600;
-}
-.BotonIngreso {
-
-  display: block;
-  margin-left: 25px;
-  margin-right: 25px;
-  --background: #1b3964;
-
-}
-
 ion-card {
+  display: flexbox;
+  justify-content: space-around;
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
+}
+ion-item {
+  --background: rgba(255, 255, 255, 0);
+  text-align: center;
+  --border-color: #f4d139;
+}
+
+.EnlaceRegistro {
+  text-align: center;
+  font-weight: 300;
+  color: #f4d239ec;
+  text-shadow: 1px 1px 1px black;
+}
+
+.BotonIngreso p {
+  color: #f4d239ec;
+  text-shadow: 1px 1px 1px black;
+  font-weight: 600;
+}
+.BotonIngreso {
+  display: block;
+  margin-left: 25px;
+  margin-right: 25px;
+  --background: #1b3964de;
 }
 
 .avatar {
@@ -51,11 +54,6 @@ ion-card {
   margin: auto;
 }
 
-ion-item {
-  --background: rgba(255, 255, 255, 0);
-  text-align: center;
-  --border-color: #f4d139;
-}
 .tipoUsuario {
   text-align: start;
 }
@@ -81,4 +79,7 @@ ion-item {
 ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
   .mat-radio-outer-circle {
   border-color: #f4d139 !important; /*outer ring color change*/
+}
+.mat-radio-button{
+  text-shadow: 1px 1px 1px black;
 }

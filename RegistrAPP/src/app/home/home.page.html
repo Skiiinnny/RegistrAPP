@@ -22,16 +22,16 @@
 
     <ion-card-content id="content">
       <!-- ITEM USUARIO  -->
-      <ion-item (click)="inputAnimation()" class="usuario">
-        <ion-label position="floating">Nombre Usuario</ion-label>
-        <ion-input [(ngModel)]="user.nombre"   name="inputNombre"  ></ion-input>
+      <ion-item (click)="inputAnimation()" class="usuario" mode="ios" >
+        <ion-label position="floating" mode="ios" >Nombre Usuario</ion-label>
+        <ion-input [(ngModel)]="user.nombre" mode="ios"  name="inputNombre"  ></ion-input>
       </ion-item>
       <!-- FIN ITEM USUARIO  -->
 
       <!-- ITEM CONTRASEÑA  -->
-      <ion-item id="pass">
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="user.clave"></ion-input>
+      <ion-item id="pass" mode="ios" >
+        <ion-label position="floating" mode="ios" >Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="user.clave" mode="ios" ></ion-input>
       </ion-item>
       <ion-item class="tipoUsuario">
         <mat-radio-group [(ngModel)]="user.tipo" aria-label="Select an option">

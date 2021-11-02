@@ -1,50 +1,85 @@
 ion-content {
   //Color de fondo
-  --ion-background-color: #1b3964;
+  --ion-background-color: #1b3964de;
 }
 ion-content ion-card ion-input {
   //Bordes de los input
-  border: 1px solid #f4d139;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 ion-content ion-card ion-label {
   //Color de la Label
-  color: #f4d139;
-}
-.EnlaceRegistro {
-  font-weight: 300;
-  color: #f4d139;
-}
-.EnlaceRegistro a {
-  text-decoration: none;
-  color: #fff;
-  text-shadow: black;
-}
-
-.BotonIngreso p {
-  color: #f4d139;
-  font-weight: 400;
+  color: #f4d239e0;
+  text-align: start;
+  text-shadow: 1px 1px 1px black;
 }
 ion-card {
-  text-align: center; //Centrar contendido de la card
-  //Fondo de vidrio(?
+  display: flexbox;
+  justify-content: space-around;
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  // place-items: center;
-  padding: 24px 16px;
 }
-// ion-avatar {
+ion-item {
+  --background: rgba(255, 255, 255, 0);
+  text-align: center;
+  --border-color: #f4d139;
+}
 
-// }
+.EnlaceRegistro {
+  text-align: center;
+  font-weight: 300;
+  color: #f4d239ec;
+  text-shadow: 1px 1px 1px black;
+}
+
+.BotonIngreso p {
+  color: #f4d239ec;
+  text-shadow: 1px 1px 1px black;
+  font-weight: 600;
+}
+.BotonIngreso {
+  display: block;
+  margin-left: 25px;
+  margin-right: 25px;
+  --background: #1b3964de;
+}
+
 .avatar {
   height: 80px;
   width: 80px;
   object-fit: cover;
   display: block;
   margin: auto;
+}
+
+.tipoUsuario {
+  text-align: start;
+}
+
+.radioButton {
+  font-size: 14px;
+  color: #f4d139;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 15px;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  opacity: 0 !important; /*click effect color change*/
+  background-color: blue !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #f4d139 !important; /*inner circle color change*/
+}
+
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
+  .mat-radio-outer-circle {
+  border-color: #f4d139 !important; /*outer ring color change*/
+}
+.mat-radio-button{
+  text-shadow: 1px 1px 1px black;
 }

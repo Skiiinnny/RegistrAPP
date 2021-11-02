@@ -10,20 +10,20 @@
   </div>
 
   <div>
-    <h4 class="texto-bienvenida">
-      ¡BIENVENIDO, @USERNAME!
+    <h4 class="texto-bienvenida" id="bienvenida">
+      ¡BIENVENIDO, {{data.nombre}}!
     </h4>
   </div>
   <div>
-    <ion-item class="dash-option" [routerLink]="['/scan-qr']">
+    <ion-item mode="ios" class="dash-option" [routerLink]="['/scan-qr']">
       <ion-icon name="camera-outline" color="warning"></ion-icon>
       <p class="text-option">ESCANEAR CÓDIGO QR<p>
     </ion-item>
   </div>
 
   <div>
-    <ion-button class="salir" color="warning" expand="block">
-      <h4>
+    <ion-button  color="warning" expand="block" [routerLink]="['/home']">
+      <h4 class="salir">
         S A L I R
       </h4>
     </ion-button>

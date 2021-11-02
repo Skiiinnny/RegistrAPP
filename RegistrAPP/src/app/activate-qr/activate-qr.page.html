@@ -8,17 +8,17 @@
 </ion-header>
 
 <ion-content>
-  <div class>
+  <div>
     <img class="logo" src="../../assets/RegistrAPP.png" alt="">
   </div>
 
-  <div>
-    <img class="sample" src="../../assets/QR SAMPLE.png" alt="">
+  <div id="qr-sample">
+    <img class="sample"  src="../../assets/QR SAMPLE.png" alt="">
   </div>
 
   <div>
-    <ion-button class="salir" color="warning" expand="block">
-      <h4>
+    <ion-button  color="warning" expand="block" (click)="animar()">
+      <h4 class="salir">
         C O M P A R T I R
       </h4>
     </ion-button>

@@ -1,0 +1,48 @@
+ion-content{
+    --ion-background-color: #1b3964;
+}
+
+.header-color{
+    --background: #f4d139;
+}
+
+.logo{
+    display:block;
+    margin:auto;
+}
+
+.sample{
+    width: 275px;
+    height: 315px;
+    display:block;
+    margin:auto;
+}
+
+ion-title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+}
+
+:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {   
+    stroke: #f4d139;
+}
+
+.spinner{
+    display:block;
+    margin:auto;
+    margin-top: 20px;
+}
+
+.loading{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f4d139;
+    text-align-last: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.salir {
+    color: white;
+    box-shadow: black;
+    font-weight: 600;
+  }

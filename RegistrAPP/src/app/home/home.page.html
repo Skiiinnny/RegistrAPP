@@ -1,20 +1,61 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> RegistrAPP </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <!-- CARD CON INICIO DE SESIÓN -->
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card color="light">
+    <!-- HEADER CON LOGO DE LA APP  -->
+
+    <ion-card-header>
+      <ion-avatar class="avatar">
+        <img src="../../assets/LogoApp.png" alt="Logo de la aplicación" />
+      </ion-avatar>
+    </ion-card-header>
+
+    <!-- FIN HEADER  -->
+
+    <!-- CONTENIDO CARD  -->
+
+    <ion-card-content id="content">
+      <!-- ITEM USUARIO  -->
+      <ion-item (click)="inputAnimation()" class="usuario" mode="ios" >
+        <ion-label position="floating" mode="ios" >Nombre Usuario</ion-label>
+        <ion-input [(ngModel)]="user.nombre" mode="ios"  name="inputNombre"  ></ion-input>
+      </ion-item>
+      <!-- FIN ITEM USUARIO  -->
+
+      <!-- ITEM CONTRASEÑA  -->
+      <ion-item id="pass" mode="ios" >
+        <ion-label position="floating" mode="ios" >Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="user.clave" mode="ios" ></ion-input>
+      </ion-item>
+      <ion-item class="tipoUsuario">
+        <mat-radio-group [(ngModel)]="user.tipo" aria-label="Select an option">
+          <mat-radio-button class="radioButton" value="1"
+            >Profesor</mat-radio-button
+          >
+          <mat-radio-button class="radioButton" value="2"
+            >Alumno</mat-radio-button
+          >
+        </mat-radio-group>
+      </ion-item>
+      <!-- FIN ITEM CONTRASEÑA  -->
+    </ion-card-content>
+
+    <!-- FIN CONTENIDO CARD  -->
+    <!-- BOTON ENTRAR  -->
+    <ion-button class="BotonIngreso" (click)="login()">
+      <p>Entrar</p>
+    </ion-button>
+    <!-- RECUPERAR CONTRASEÑA -->
+    <ion-item [routerLink]="['/recovery']" mode="ios" (click)="cleanFields()">
+      <p class="EnlaceRegistro" >¿Olvidaste tu contraseña? ¡Recupérala!</p>
+    </ion-item>
+  </ion-card>
+
+  <!-- FIN CARD INICIO SESIÓN  -->
 </ion-content>

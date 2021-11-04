@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { DashboardAlumnoPage } from './dashboard-alumno/dashboard-alumno.page';
 
 const routes: Routes = [
   {
@@ -7,18 +8,42 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
+    path: '', 
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    
+  },
+ 
+  {
+    path: 'dashboard-alumno',
+    component : DashboardAlumnoPage,
+    loadChildren: () => import('./dashboard-alumno/dashboard-alumno.module').then( m => m.DashboardAlumnoPageModule)
   },
   {
-    path: 'inicio-docente',
-    loadChildren: () => import('./inicio-docente/inicio-docente.module').then( m => m.InicioDocentePageModule)
+    path: 'dashboard-profesor',
+    loadChildren: () => import('./dashboard-profesor/dashboard-profesor.module').then( m => m.DashboardProfesorPageModule)
   },
   {
-    path: 'inicio-alumno',
-    loadChildren: () => import('./inicio-alumno/inicio-alumno.module').then( m => m.InicioAlumnoPageModule)
+    path: 'activate-qr',
+    loadChildren: () => import('./activate-qr/activate-qr.module').then( m => m.ActivateQrPageModule)
   },
+  {
+    path: 'scan-qr',
+    loadChildren: () => import('./scan-qr/scan-qr.module').then( m => m.ScanQrPageModule)
+  },
+  {
+    path: 'test',
+    loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
+  },  {
+    path: 'recovery',
+    loadChildren: () => import('./recovery/recovery.module').then( m => m.RecoveryPageModule)
+  },
+
+
+
+
+
+
 ];
 
 @NgModule({

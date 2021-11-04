@@ -11,7 +11,7 @@
 
   <div>
     <h4 class="texto-bienvenida" id="bienvenida">
-      ¡BIENVENIDO, {{data.nombre}}!
+      ¡BIENVENIDO, {{data.nombre_usuario}}!
     </h4>
   </div>
   <div>
@@ -22,10 +22,12 @@
   </div>
 
   <div>
-    <ion-button  color="warning" expand="block" [routerLink]="['/home']">
+    <ion-button  color="warning" expand="block" [routerLink]="['/home']" (click)="cerrarSesion()">
       <h4 class="salir">
-        S A L I R
+        CERRAR SESIÓN
       </h4>
     </ion-button>
   </div>
+
+  <ion-button [routerLink]="['/recovery']">recovery</ion-button>
 </ion-content>

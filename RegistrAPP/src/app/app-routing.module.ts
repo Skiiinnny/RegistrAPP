@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { DashboardAlumnoPage } from './dashboard-alumno/dashboard-alumno.page';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +16,6 @@ const routes: Routes = [
  
   {
     path: 'dashboard-alumno',
-    component : DashboardAlumnoPage,
     loadChildren: () => import('./dashboard-alumno/dashboard-alumno.module').then( m => m.DashboardAlumnoPageModule)
   },
   {
@@ -34,16 +33,12 @@ const routes: Routes = [
   {
     path: 'test',
     loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
-  },  {
-    path: 'recovery',
-    loadChildren: () => import('./recovery/recovery.module').then( m => m.RecoveryPageModule)
   },
-
-
-
-
-
-
+  {
+    path: 'recovery',
+    loadChildren: () => import('./recovery/recovery.module').then( m => m.RecoveryPageModule),
+    canLoad: [AuthGuard]
+  },
 ];
 
 @NgModule({

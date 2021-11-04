@@ -23,6 +23,7 @@ import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
     AppRoutingModule,
     NoopAnimationsModule,
     IonicStorageModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [
     SQLite,

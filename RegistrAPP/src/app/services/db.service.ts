@@ -14,6 +14,7 @@ export class DbService {
   private storage: SQLiteObject;
   private isDbReady: BehaviorSubject<boolean> = new BehaviorSubject(false);
   sesionActual: Usuario;
+  
 
   constructor(
     private platform: Platform,
@@ -71,6 +72,16 @@ export class DbService {
   // Función para cerrar sesión:
 
   cerrarSesion(id){
-    return this.storage.executeSql(`UPDATE usuario SET activo = 0 WHERE id = ${id}`)
+    return this.storage.executeSql('SELECT * FROM usuario WHERE id_usuario = ?', [id]).then(res => { 
+      return {
+        id_usuario: res.rows.item(0).id_usuario,
+        cuenta_usuario: res.rows.item(0).cuenta_usuario,
+        clave_usuario: res.rows.item(0).clave_usuario,
+        tipo_usuario: res.rows.item(0).tipo_usuario,
+        nombre_usuario: res.rows.item(0).nombre_usuario,
+        apellido_usuario: res.rows.item(0).apellido_usuario,
+        activo: 0
+      }
+    });
   }
 }

@@ -38,13 +38,13 @@ export class DashboardAlumnoPage implements OnInit {
   }
 
 
-  // ¡No acabado!:
+  // Función que cambia el estado de sesión actual a no activo:
   
   cerrarSesion() {
     this.db.cerrarSesion(
       this.data.id_usuario
-    ).then(() => {
-      this.db.sesionActual.activo = 0;
+    ).then((res) => {
+      this.db.sesionActual = res;
       this.router.navigate(['/home']);
     })
   }

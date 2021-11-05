@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimationController, NavController } from '@ionic/angular';
+import { DbService } from '../services/db.service';
+import { Usuario } from '../services/usuario';
 
 @Component({
   selector: 'app-dashboard-profesor',
@@ -9,14 +11,13 @@ import { AnimationController, NavController } from '@ionic/angular';
 })
 export class DashboardProfesorPage implements OnInit {
 
-  data: any;
+  data: Usuario;
 
   constructor(private activeroute: ActivatedRoute, private router: Router,
-    private animationCtrl: AnimationController) {
+    private animationCtrl: AnimationController, private db: DbService) {
     this.activeroute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.data = this.router.getCurrentNavigation().extras.state.user;
-        console.log(this.data)
       }
     });
 
@@ -32,6 +33,17 @@ export class DashboardProfesorPage implements OnInit {
     ])
     .iterations(Infinity)
     .play()
+  }
+
+   // Función que cambia el estado de sesión actual a no activo:
+
+  cerrarSesion() {
+    this.db.cerrarSesion(
+      this.data.id_usuario
+    ).then((res) => {
+      this.db.sesionActual = res;
+      this.router.navigate(['/home']);
+    })
   }
 
 }

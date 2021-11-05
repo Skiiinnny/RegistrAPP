@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from "@angular/forms";
+import { DbService } from './../services/db.service';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AnimationController, ToastController } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
+import { state } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
@@ -9,37 +11,42 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  user = { nombre: '', clave: '', tipo: '' }
-  
+  loginForm: FormGroup;
+
   constructor(
     private router: Router,
     private toastController: ToastController,
     private animationCtrl: AnimationController,
-    private storage: Storage
-  ) {
-    storage.set('tipoUsuario','2')
+    private db: DbService,
+    private formBuilder: FormBuilder
+
+  ) { }
+
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      usuario: [''],
+      clave: ['']
+    })
   }
 
+  // Función para comprobar credenciales:
 
-  async login() {
-    this.storage.get('tipoUsuario')
-    if (
-      this.user.nombre != '' &&
-      this.user.clave != '' &&
-      this.user.tipo != ''
-    ) {
+  iniciarSesion() {
+    this.db.iniciarSesion(
+      this.loginForm.value.usuario,
+      this.loginForm.value.clave
+    ).then((res) => {
       let navigationExtras: NavigationExtras = {
-        state: { user: this.user },
+        state: { user: res },
       };
-      
-
-      if (await this.storage.get('tipoUsuario') == '2') {
+      if (res.tipo_usuario == 1) {
         this.router.navigate(['/dashboard-alumno'], navigationExtras);
       } else {
         this.router.navigate(['/dashboard-profesor'], navigationExtras);
       }
-      this.user = { nombre: '', clave: '', tipo: '' };
-    } else {
+      this.db.sesionActual = res;
+      this.loginForm.reset();
+    }, async error => {
       this.animationCtrl.create()
         .addElement(document.querySelector('#content'))
         .duration(300)
@@ -51,18 +58,12 @@ export class HomePage implements OnInit {
         .iterations(2)
         .play()
       const toast = await this.toastController.create({
-        message: '¡Llene todos los campos!',
+        message: '¡Credenciales incorrectas!',
         duration: 1000,
         color: 'warning',
       });
       toast.present();
-    }
-
- 
+    })
   }
-  cleanFields() {
-    this.user = { nombre: '', clave: '', tipo: '' };
-  }
-
-  ngOnInit() {}
 }
+

@@ -1,6 +1,9 @@
 export class Usuario {
-    id: number;
-    nombre_usuario: string;
+    id_usuario: number;
+    cuenta_usuario: string;
+    clave_usuario: string;
     tipo_usuario: number;
-    clave: string;
+    nombre_usuario: string;
+    apellido_usuario: string;
+    activo: number;
 }

@@ -12,8 +12,8 @@ ion-content{
 }
 
 .sample{
-    width: 206px;
-    height: 206px;
+    width: auto;
+    min-height: 206px;
     display:block;
     margin:auto;
     padding-bottom: 10%;

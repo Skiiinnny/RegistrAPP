@@ -12,7 +12,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SQLite } from '@ionic-native/sqlite/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
-
+import { Camera } from '@ionic-native/camera/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -26,6 +26,7 @@ import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
   providers: [
     SQLite,
     SQLitePorter,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],

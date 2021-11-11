@@ -11,11 +11,12 @@
     <img class="logo" src="../../assets/RegistrAPP.png" alt="">
   </div>
 
-  <mat-spinner class="spinner"></mat-spinner>
+  <mat-spinner class="spinner" id ="spinner"></mat-spinner>
   <h4 class="loading" id="texto">Cargando cámara...</h4>
+  <img id="camara" class="displayNone posicion" src="{{imgURL}}" alt="imagen de la cámara" onerror="this.onerror=null;this.src='../../assets/RegistrAPP'">
 
   <div>
-    <ion-button color="warning" expand="block" (click)="animar()">
+    <ion-button color="warning" expand="block" (click)="getFromCamera()">
       <h4 class="salir">
         E S C A N E A R
       </h4>

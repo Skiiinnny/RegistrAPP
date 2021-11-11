@@ -12,7 +12,8 @@
   </div>
 
   <div>
-    <mat-card class="example-card">
+    <form [formGroup]="recoveryForm"  (ngSubmit)="envio()">
+    <mat-card  class="example-card" id="content">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>Recuperar contraseña</mat-card-title>
@@ -20,13 +21,14 @@
       <mat-card-content id="input">
         <mat-form-field appearance="legacy">
           <mat-label>Nombre de Usuario</mat-label>
-          <input matInput [(ngModel)]="username">
+          <input id="username" matInput formControlName="username">
         </mat-form-field>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button (click)="envio()">RECUPERAR</button>
+        <button mat-button type="submit">RECUPERAR</button>
       </mat-card-actions>
     </mat-card>
+  </form>
   </div>
 
 </ion-content>

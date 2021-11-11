@@ -28,7 +28,13 @@ export class ScanQrPage implements OnInit {
     
   }
   getFromCamera() {
+    let texto = document.getElementById('texto');
+    let spinner = document.getElementById('spinner');
+    let camara = document.getElementById('camara');
 
+    texto.classList.add('displayNone');
+    spinner.classList.add('displayNone');
+    camara.classList.remove('displayNone');
     this.camera.getPicture({
 
       sourceType : this.camera.PictureSourceType.CAMERA,

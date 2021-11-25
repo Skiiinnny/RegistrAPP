@@ -35,6 +35,7 @@ export class ScanQrPage implements OnInit {
     texto.classList.add('displayNone');
     spinner.classList.add('displayNone');
     camara.classList.remove('displayNone');
+    camara.classList.add('posicion')
     this.camera.getPicture({
 
       sourceType : this.camera.PictureSourceType.CAMERA,
@@ -45,6 +46,8 @@ export class ScanQrPage implements OnInit {
 
       this.imgURL = 'data:image/jpeg;base64,' + imageData;
 
+    }, async error => {
+      console.log("No se puede obtener cámara.")
     });
 
   }

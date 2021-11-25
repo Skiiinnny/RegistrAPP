@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimationController } from '@ionic/angular';
 import { Camera } from '@ionic-native/camera/ngx';
+import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 
 @Component({
   selector: 'app-scan-qr',
@@ -9,7 +10,10 @@ import { Camera } from '@ionic-native/camera/ngx';
 })
 export class ScanQrPage implements OnInit {
   imgURL;
-  constructor(private animationCtrl: AnimationController, private camera: Camera) {}
+  constructor(
+    private animationCtrl: AnimationController, 
+    private camera: Camera,
+    private qrScanner: QRScanner) {}
 
   ngOnInit() {}
 
@@ -35,7 +39,7 @@ export class ScanQrPage implements OnInit {
     texto.classList.add('displayNone');
     spinner.classList.add('displayNone');
     camara.classList.remove('displayNone');
-    camara.classList.add('posicion')
+    
     this.camera.getPicture({
 
       sourceType : this.camera.PictureSourceType.CAMERA,
@@ -47,8 +51,9 @@ export class ScanQrPage implements OnInit {
       this.imgURL = 'data:image/jpeg;base64,' + imageData;
 
     }, async error => {
-      console.log("No se puede obtener cámara.")
+      camara.classList.add('posicion');
+      console.log("No se puede obtener cámara.");
     });
-
+    
   }
 }

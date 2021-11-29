@@ -29,6 +29,7 @@
     "@ionic-native/sqlite-porter": "^5.36.0",
     "@ionic/angular": "^5.5.2",
     "@ionic/storage": "^2.3.1",
+    "prod": "1.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
@@ -53,6 +54,7 @@
     "cordova-android": "^10.0.0",
     "cordova-browser": "^6.0.0",
     "cordova-plugin-androidx-adapter": "^1.1.3",
+    "cordova-plugin-config-helper": "^1.0.1",
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^4.0.0",
@@ -79,15 +81,21 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "uk.co.workingedge.cordova.plugin.sqliteporter": {},
-      "cordova-sqlite-storage": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-camera": {},
       "cordova-plugin-androidx-adapter": {},
-      "cordova-plugin-qrscanner": {}
+      "cordova-plugin-qrscanner": {},
+      "cordova-plugin-config-helper": {
+        "TEMPLATE": "config.tpl.xml",
+        "DEV_HOST": "0.0.0.0",
+        "DEV_PORT": "3000",
+        "INDEX": "index.html"
+      },
+      "uk.co.workingedge.cordova.plugin.sqliteporter": {},
+      "cordova-sqlite-storage": {}
     },
     "platforms": [
       "browser"

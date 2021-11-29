@@ -13,6 +13,8 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
+import { QRScanner } from '@ionic-native/qr-scanner/ngx';
+import { QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,12 +23,14 @@ import { Camera } from '@ionic-native/camera/ngx';
     IonicModule.forRoot(),
     AppRoutingModule,
     NoopAnimationsModule,
-    HttpClientModule,
+    HttpClientModule, 
   ],
   providers: [
     SQLite,
     SQLitePorter,
     Camera,
+    QRScanner,
+   
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],

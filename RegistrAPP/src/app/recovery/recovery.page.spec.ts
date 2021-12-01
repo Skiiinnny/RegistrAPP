@@ -21,4 +21,9 @@ describe('RecoveryPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Input usuario está vinculado a RecoveryForm:', () => {
+    let dom = fixture.debugElement.nativeElement;
+    expect(dom.querySelector("#input")).toEqual(component.recoveryForm.value.username);
+  });
 });

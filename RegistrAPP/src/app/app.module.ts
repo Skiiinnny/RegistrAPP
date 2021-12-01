@@ -13,6 +13,8 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -25,8 +27,8 @@ import { Camera } from '@ionic-native/camera/ngx';
   ],
   providers: [
     SQLite,
-    SQLitePorter,
-    Camera,
+    SQLitePorter, 
+    BarcodeScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { DbService } from './../services/db.service';
-import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { AnimationController, ToastController } from '@ionic/angular';
-import { state } from '@angular/animations';
+
 
 @Component({
   selector: 'app-home',

@@ -21,4 +21,9 @@ describe('ScanQrPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Se aplica la clase loading al texto:', () => {
+    let dom = fixture.debugElement.nativeElement;
+    expect(dom.querySelector("#texto").className).toEqual("loading");
+  });
 });

@@ -21,4 +21,9 @@ describe('DashboardAlumnoPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Se muestra nombre de usuario en bienvenida:', () => {
+    let dom = fixture.debugElement.nativeElement;
+    expect(dom.querySelector("#bienvenida")).toContain(component.data.nombre_usuario);
+  });
 });

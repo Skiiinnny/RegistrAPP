@@ -12,10 +12,11 @@
   </div>
 
   <mat-spinner class="spinner" id ="spinner"></mat-spinner>
-  <h4 class="loading" id="texto">Cargando cámara...</h4>
-  <img id="camara" class="displayNone" src="{{imgURL}}" alt="imagen de la cámara" onerror="this.onerror=null;this.src='../../assets/cameraProblem.png'">
+  <h4 class="loading" id="texto">Presione escanear...</h4>
+  <img id="logrado" class="displayNone" src="../../assets/checked.png" alt="Listo">
+  <img id="fallido" class="displayNone" src="../../assets/cameraProblem.png" alt="Fallo">
   <div>
-    <ion-button color="warning" expand="block" (click)="getFromCamera()">
+    <ion-button color="warning" expand="block" (click)="scanQR()">
       <h4 class="salir">
         E S C A N E A R
       </h4>

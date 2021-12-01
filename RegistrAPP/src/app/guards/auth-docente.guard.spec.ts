@@ -9,8 +9,4 @@ describe('AuthDocenteGuard', () => {
     TestBed.configureTestingModule({});
     guard = TestBed.inject(AuthDocenteGuard);
   });
-
-  it('should be created', () => {
-    expect(guard).toBeTruthy();
-  });
 });

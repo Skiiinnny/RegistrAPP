@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimationController } from '@ionic/angular';
-import { Camera } from '@ionic-native/camera/ngx';
-import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
-
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 @Component({
   selector: 'app-scan-qr',
   templateUrl: './scan-qr.page.html',
@@ -10,12 +8,12 @@ import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 })
 export class ScanQrPage implements OnInit {
   imgURL;
-  constructor(
-    private animationCtrl: AnimationController, 
-    private camera: Camera,
-    private qrScanner: QRScanner) {}
 
-  ngOnInit() {}
+  constructor(
+    private animationCtrl: AnimationController,
+    private barcodeScanner: BarcodeScanner) { }
+
+  ngOnInit() { }
 
   animar() {
     this.animationCtrl
@@ -29,31 +27,54 @@ export class ScanQrPage implements OnInit {
       ])
       .iterations(2)
       .play();
-    
+
   }
-  getFromCamera() {
+  // getFromCamera() {
+  //   let texto = document.getElementById('texto');
+  //   let spinner = document.getElementById('spinner');
+  //   let camara = document.getElementById('camara');
+
+  //   texto.classList.add('displayNone');
+  //   spinner.classList.add('displayNone');
+  //   camara.classList.remove('displayNone');
+
+  //   this.camera.getPicture({
+
+  //     sourceType: this.camera.PictureSourceType.CAMERA,
+
+  //     destinationType: this.camera.DestinationType.DATA_URL
+
+  //   }).then((imageData) => {
+
+  //     this.imgURL = 'data:image/jpeg;base64,' + imageData;
+
+  //   }, async error => {
+  //     camara.classList.add('posicion');
+  //     console.log("No se puede obtener cámara.");
+  //   });
+
+  // }
+
+  scanQR() {
     let texto = document.getElementById('texto');
     let spinner = document.getElementById('spinner');
-    let camara = document.getElementById('camara');
+    let logrado = document.getElementById('logrado');
+    let fallido = document.getElementById('fallido');
 
     texto.classList.add('displayNone');
     spinner.classList.add('displayNone');
-    camara.classList.remove('displayNone');
-    
-    this.camera.getPicture({
+    fallido.classList.add('displayNone');
+    logrado.classList.add('displayNone');
 
-      sourceType : this.camera.PictureSourceType.CAMERA,
-
-      destinationType: this.camera.DestinationType.DATA_URL
-
-    }).then((imageData) => {
-
-      this.imgURL = 'data:image/jpeg;base64,' + imageData;
-
-    }, async error => {
-      camara.classList.add('posicion');
-      console.log("No se puede obtener cámara.");
+    this.barcodeScanner.scan().then(barcodeData => {
+      window.location.href = "mailto:fer.sepulvedac@profesor.duoc.cl?subject=REGISTRO%20ASISTENCIA&body=" + barcodeData.text;
+      fallido.classList.remove('posicion')
+      logrado.classList.add('posicion');
+      
+    }).catch(err => {
+      console.log('Error', err);
+      logrado.classList.remove('posicion')
+      fallido.classList.add('posicion');
     });
-    
   }
 }

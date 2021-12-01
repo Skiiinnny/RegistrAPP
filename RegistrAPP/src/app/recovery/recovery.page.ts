@@ -82,7 +82,6 @@ export class RecoveryPage implements OnInit {
   ngOnInit() {
     this.recoveryForm = this.formBuilder.group({
       username: ['']
-      
     })
   }
 }

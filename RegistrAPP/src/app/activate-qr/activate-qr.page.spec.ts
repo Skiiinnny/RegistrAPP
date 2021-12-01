@@ -21,4 +21,10 @@ describe('ActivateQrPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Se aplica la clase sample a la imagen QR:', () => {
+    let dom = fixture.debugElement.nativeElement;
+    expect(dom.querySelector("#QR-img").className).toEqual('sample');
+  });
 });
+

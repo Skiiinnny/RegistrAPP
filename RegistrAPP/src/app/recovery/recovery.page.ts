@@ -26,7 +26,9 @@ export class RecoveryPage implements OnInit {
 
 
   async envio() {
-    this.db.consultarNombreUsuario(this.recoveryForm.value.username).then(async (  res ) =>{
+    this.db.consultarNombreUsuario(
+      this.recoveryForm.value.username
+      ).then(async (  res ) =>{
       if (res.cuenta_usuario == this.recoveryForm.value.username) { 
          const toast = await this.toastController.create({
           message: '¡Correo de recuperación enviado!',

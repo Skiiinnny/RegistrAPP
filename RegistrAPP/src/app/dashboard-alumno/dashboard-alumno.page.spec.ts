@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-
 import { DashboardAlumnoPage } from './dashboard-alumno.page';
 
 describe('DashboardAlumnoPage', () => {
@@ -10,7 +10,10 @@ describe('DashboardAlumnoPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DashboardAlumnoPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot()],
+      providers: [
+        ActivatedRoute
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(DashboardAlumnoPage);
@@ -18,7 +21,7 @@ describe('DashboardAlumnoPage', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it('El componente ActivateQR es creado.', () => {
     expect(component).toBeTruthy();
   });
 

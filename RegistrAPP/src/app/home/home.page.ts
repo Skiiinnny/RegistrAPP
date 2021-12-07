@@ -33,7 +33,7 @@ export class HomePage implements OnInit {
 
   iniciarSesion() {
     this.db.iniciarSesion(
-      this.loginForm.value.usuario,
+      this.loginForm.value.usuario.toString().toLowerCase(),
       this.loginForm.value.clave
     ).then((res) => {
       let navigationExtras: NavigationExtras = {

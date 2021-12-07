@@ -20,7 +20,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
   entryComponents: [],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot({
+      mode: 'ios'
+    }),
     AppRoutingModule,
     NoopAnimationsModule,
     HttpClientModule,
